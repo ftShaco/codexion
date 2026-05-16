@@ -1,0 +1,594 @@
+1 1 has taken a dongle
+1 1 has taken a dongle
+1 1 is compiling
+1 3 has taken a dongle
+1 3 has taken a dongle
+1 3 is compiling
+1 4 has taken a dongle
+201 Coder #3 compiled for the 1st time
+201 3 is debugging
+201 Coder #1 compiled for the 1st time
+201 1 is debugging
+211 4 has taken a dongle
+211 4 is compiling
+211 2 has taken a dongle
+211 2 has taken a dongle
+211 2 is compiling
+401 1 is refactoring
+401 3 is refactoring
+411 Coder #2 compiled for the 1st time
+411 2 is debugging
+411 Coder #4 compiled for the 1st time
+411 4 is debugging
+421 5 has taken a dongle
+421 5 has taken a dongle
+421 5 is compiling
+601 3 has taken a dongle
+601 3 has taken a dongle
+601 3 is compiling
+611 2 is refactoring
+611 4 is refactoring
+621 Coder #5 compiled for the 1st time
+621 5 is debugging
+631 1 has taken a dongle
+631 1 has taken a dongle
+631 1 is compiling
+801 Coder #3 compiled for the 2th time
+801 3 is debugging
+811 2 has taken a dongle
+811 4 has taken a dongle
+811 4 has taken a dongle
+811 4 is compiling
+821 5 is refactoring
+831 Coder #1 compiled for the 2th time
+831 1 is debugging
+841 2 has taken a dongle
+841 2 is compiling
+1001 3 is refactoring
+1011 Coder #4 compiled for the 2th time
+1011 4 is debugging
+1021 5 has taken a dongle
+1021 5 has taken a dongle
+1021 5 is compiling
+1031 1 is refactoring
+1041 Coder #2 compiled for the 2th time
+1041 2 is debugging
+1202 3 has taken a dongle
+1202 3 has taken a dongle
+1202 3 is compiling
+1211 4 is refactoring
+1221 Coder #5 compiled for the 2th time
+1221 5 is debugging
+1231 1 has taken a dongle
+1231 1 has taken a dongle
+1231 1 is compiling
+1241 2 is refactoring
+1402 Coder #3 compiled for the 3th time
+1402 3 is debugging
+1411 4 has taken a dongle
+1412 4 has taken a dongle
+1412 4 is compiling
+1421 5 is refactoring
+1431 Coder #1 compiled for the 3th time
+1431 1 is debugging
+1441 2 has taken a dongle
+1441 2 has taken a dongle
+1441 2 is compiling
+1602 3 is refactoring
+1612 Coder #4 compiled for the 3th time
+1612 4 is debugging
+1622 5 has taken a dongle
+1622 5 has taken a dongle
+1622 5 is compiling
+1631 1 is refactoring
+1641 Coder #2 compiled for the 3th time
+1641 2 is debugging
+1802 3 has taken a dongle
+1802 3 has taken a dongle
+1802 3 is compiling
+1812 4 is refactoring
+1822 Coder #5 compiled for the 3th time
+1822 5 is debugging
+1832 1 has taken a dongle
+1832 1 has taken a dongle
+1832 1 is compiling
+1841 2 is refactoring
+2002 Coder #3 compiled for the 4th time
+2002 3 is debugging
+2012 4 has taken a dongle
+2012 4 has taken a dongle
+2012 4 is compiling
+2022 5 is refactoring
+2032 Coder #1 compiled for the 4th time
+2032 1 is debugging
+2041 2 has taken a dongle
+2042 2 has taken a dongle
+2042 2 is compiling
+2202 3 is refactoring
+2212 Coder #4 compiled for the 4th time
+2212 4 is debugging
+2222 5 has taken a dongle
+2222 5 has taken a dongle
+2222 5 is compiling
+2232 1 is refactoring
+2242 Coder #2 compiled for the 4th time
+2242 2 is debugging
+2402 3 has taken a dongle
+2402 3 has taken a dongle
+2402 3 is compiling
+2412 4 is refactoring
+2422 Coder #5 compiled for the 4th time
+2422 5 is debugging
+2432 1 has taken a dongle
+2432 1 has taken a dongle
+2432 1 is compiling
+2442 2 is refactoring
+2602 Coder #3 compiled for the 5th time
+2602 3 is debugging
+2612 4 has taken a dongle
+2612 4 has taken a dongle
+2612 4 is compiling
+2622 5 is refactoring
+2632 Coder #1 compiled for the 5th time
+2632 1 is debugging
+2642 2 has taken a dongle
+2642 2 has taken a dongle
+2642 2 is compiling
+2802 3 is refactoring
+2812 Coder #4 compiled for the 5th time
+2812 4 is debugging
+2822 5 has taken a dongle
+2822 5 has taken a dongle
+2822 5 is compiling
+2832 1 is refactoring
+2842 Coder #2 compiled for the 5th time
+2842 2 is debugging
+3002 3 has taken a dongle
+3002 3 has taken a dongle
+3002 3 is compiling
+3012 4 is refactoring
+3022 Coder #5 compiled for the 5th time
+3022 5 is debugging
+3032 1 has taken a dongle
+3032 1 has taken a dongle
+3032 1 is compiling
+3042 2 is refactoring
+3202 Coder #3 compiled for the 6th time
+3202 3 is debugging
+3212 4 has taken a dongle
+3212 4 has taken a dongle
+3212 4 is compiling
+3222 5 is refactoring
+3232 Coder #1 compiled for the 6th time
+3232 1 is debugging
+3242 2 has taken a dongle
+3242 2 has taken a dongle
+3242 2 is compiling
+3402 3 is refactoring
+3412 Coder #4 compiled for the 6th time
+3412 4 is debugging
+3422 5 has taken a dongle
+3422 5 has taken a dongle
+3422 5 is compiling
+3432 1 is refactoring
+3442 Coder #2 compiled for the 6th time
+3442 2 is debugging
+3602 3 has taken a dongle
+3602 3 has taken a dongle
+3602 3 is compiling
+3612 4 is refactoring
+3622 Coder #5 compiled for the 6th time
+3622 5 is debugging
+3632 1 has taken a dongle
+3632 1 has taken a dongle
+3632 1 is compiling
+3642 2 is refactoring
+3802 Coder #3 compiled for the 7th time
+3802 3 is debugging
+3812 4 has taken a dongle
+3812 4 has taken a dongle
+3812 4 is compiling
+3822 5 is refactoring
+3832 Coder #1 compiled for the 7th time
+3832 1 is debugging
+3842 2 has taken a dongle
+3842 2 has taken a dongle
+3842 2 is compiling
+4002 3 is refactoring
+4012 Coder #4 compiled for the 7th time
+4012 4 is debugging
+4022 5 has taken a dongle
+4022 5 has taken a dongle
+4022 5 is compiling
+4032 1 is refactoring
+4042 Coder #2 compiled for the 7th time
+4042 2 is debugging
+4202 3 has taken a dongle
+4202 3 has taken a dongle
+4202 3 is compiling
+4212 4 is refactoring
+4222 Coder #5 compiled for the 7th time
+4222 5 is debugging
+4232 1 has taken a dongle
+4232 1 has taken a dongle
+4232 1 is compiling
+4242 2 is refactoring
+4402 Coder #3 compiled for the 8th time
+4402 3 is debugging
+4412 4 has taken a dongle
+4412 4 has taken a dongle
+4412 4 is compiling
+4422 5 is refactoring
+4432 Coder #1 compiled for the 8th time
+4432 1 is debugging
+4442 2 has taken a dongle
+4442 2 has taken a dongle
+4442 2 is compiling
+4602 3 is refactoring
+4612 Coder #4 compiled for the 8th time
+4612 4 is debugging
+4622 5 has taken a dongle
+4622 5 has taken a dongle
+4622 5 is compiling
+4632 1 is refactoring
+4642 Coder #2 compiled for the 8th time
+4642 2 is debugging
+4802 3 has taken a dongle
+4802 3 has taken a dongle
+4802 3 is compiling
+4812 4 is refactoring
+4822 Coder #5 compiled for the 8th time
+4822 5 is debugging
+4832 1 has taken a dongle
+4832 1 has taken a dongle
+4832 1 is compiling
+4842 2 is refactoring
+5002 Coder #3 compiled for the 9th time
+5002 3 is debugging
+5012 4 has taken a dongle
+5012 4 has taken a dongle
+5012 4 is compiling
+5022 5 is refactoring
+5032 Coder #1 compiled for the 9th time
+5032 1 is debugging
+5042 2 has taken a dongle
+5042 2 has taken a dongle
+5042 2 is compiling
+5202 3 is refactoring
+5212 Coder #4 compiled for the 9th time
+5212 4 is debugging
+5222 5 has taken a dongle
+5222 5 has taken a dongle
+5222 5 is compiling
+5232 1 is refactoring
+5242 Coder #2 compiled for the 9th time
+5242 2 is debugging
+5402 3 has taken a dongle
+5402 3 has taken a dongle
+5402 3 is compiling
+5412 4 is refactoring
+5422 Coder #5 compiled for the 9th time
+5422 5 is debugging
+5432 1 has taken a dongle
+5432 1 has taken a dongle
+5432 1 is compiling
+5442 2 is refactoring
+5602 Coder #3 compiled for the 10th time
+5602 3 is debugging
+5612 4 has taken a dongle
+5612 4 has taken a dongle
+5612 4 is compiling
+5622 5 is refactoring
+5632 Coder #1 compiled for the 10th time
+5632 1 is debugging
+5642 2 has taken a dongle
+5642 2 has taken a dongle
+5642 2 is compiling
+5802 3 is refactoring
+5812 Coder #4 compiled for the 10th time
+5812 4 is debugging
+5822 5 has taken a dongle
+5822 5 has taken a dongle
+5822 5 is compiling
+5832 1 is refactoring
+5842 Coder #2 compiled for the 10th time
+5842 2 is debugging
+6002 3 has taken a dongle
+6002 3 has taken a dongle
+6002 3 is compiling
+6012 4 is refactoring
+6022 Coder #5 compiled for the 10th time
+6022 5 is debugging
+6032 1 has taken a dongle
+6032 1 has taken a dongle
+6032 1 is compiling
+6042 2 is refactoring
+6202 Coder #3 compiled for the 11th time
+6202 3 is debugging
+6212 4 has taken a dongle
+6212 4 has taken a dongle
+6212 4 is compiling
+6222 5 is refactoring
+6232 Coder #1 compiled for the 11th time
+6232 1 is debugging
+6242 2 has taken a dongle
+6242 2 has taken a dongle
+6242 2 is compiling
+6402 3 is refactoring
+6412 Coder #4 compiled for the 11th time
+6412 4 is debugging
+6422 5 has taken a dongle
+6422 5 has taken a dongle
+6422 5 is compiling
+6432 1 is refactoring
+6442 Coder #2 compiled for the 11th time
+6442 2 is debugging
+6602 3 has taken a dongle
+6602 3 has taken a dongle
+6602 3 is compiling
+6612 4 is refactoring
+6622 Coder #5 compiled for the 11th time
+6622 5 is debugging
+6632 1 has taken a dongle
+6632 1 has taken a dongle
+6632 1 is compiling
+6642 2 is refactoring
+6802 Coder #3 compiled for the 12th time
+6802 3 is debugging
+6812 4 has taken a dongle
+6812 4 has taken a dongle
+6812 4 is compiling
+6822 5 is refactoring
+6832 Coder #1 compiled for the 12th time
+6832 1 is debugging
+6842 2 has taken a dongle
+6842 2 has taken a dongle
+6842 2 is compiling
+7002 3 is refactoring
+7012 Coder #4 compiled for the 12th time
+7012 4 is debugging
+7022 5 has taken a dongle
+7022 5 has taken a dongle
+7022 5 is compiling
+7032 1 is refactoring
+7042 Coder #2 compiled for the 12th time
+7042 2 is debugging
+7202 3 has taken a dongle
+7202 3 has taken a dongle
+7202 3 is compiling
+7212 4 is refactoring
+7222 Coder #5 compiled for the 12th time
+7222 5 is debugging
+7232 1 has taken a dongle
+7232 1 has taken a dongle
+7232 1 is compiling
+7242 2 is refactoring
+7402 Coder #3 compiled for the 13th time
+7402 3 is debugging
+7412 4 has taken a dongle
+7412 4 has taken a dongle
+7412 4 is compiling
+7422 5 is refactoring
+7432 Coder #1 compiled for the 13th time
+7432 1 is debugging
+7442 2 has taken a dongle
+7442 2 has taken a dongle
+7442 2 is compiling
+7602 3 is refactoring
+7612 Coder #4 compiled for the 13th time
+7612 4 is debugging
+7622 5 has taken a dongle
+7622 5 has taken a dongle
+7622 5 is compiling
+7632 1 is refactoring
+7642 Coder #2 compiled for the 13th time
+7642 2 is debugging
+7802 3 has taken a dongle
+7802 3 has taken a dongle
+7802 3 is compiling
+7812 4 is refactoring
+7822 Coder #5 compiled for the 13th time
+7822 5 is debugging
+7832 1 has taken a dongle
+7832 1 has taken a dongle
+7832 1 is compiling
+7842 2 is refactoring
+8002 Coder #3 compiled for the 14th time
+8002 3 is debugging
+8012 4 has taken a dongle
+8012 4 has taken a dongle
+8012 4 is compiling
+8022 5 is refactoring
+8032 Coder #1 compiled for the 14th time
+8032 1 is debugging
+8042 2 has taken a dongle
+8042 2 has taken a dongle
+8042 2 is compiling
+8202 3 is refactoring
+8212 Coder #4 compiled for the 14th time
+8212 4 is debugging
+8222 5 has taken a dongle
+8222 5 has taken a dongle
+8222 5 is compiling
+8232 1 is refactoring
+8242 Coder #2 compiled for the 14th time
+8242 2 is debugging
+8402 3 has taken a dongle
+8402 3 has taken a dongle
+8402 3 is compiling
+8412 4 is refactoring
+8422 Coder #5 compiled for the 14th time
+8422 5 is debugging
+8432 1 has taken a dongle
+8432 1 has taken a dongle
+8432 1 is compiling
+8442 2 is refactoring
+8602 Coder #3 compiled for the 15th time
+8602 3 is debugging
+8612 4 has taken a dongle
+8612 4 has taken a dongle
+8612 4 is compiling
+8622 5 is refactoring
+8632 Coder #1 compiled for the 15th time
+8632 1 is debugging
+8642 2 has taken a dongle
+8642 2 has taken a dongle
+8642 2 is compiling
+8802 3 is refactoring
+8812 Coder #4 compiled for the 15th time
+8812 4 is debugging
+8822 5 has taken a dongle
+8822 5 has taken a dongle
+8822 5 is compiling
+8832 1 is refactoring
+8842 Coder #2 compiled for the 15th time
+8842 2 is debugging
+9002 3 has taken a dongle
+9002 3 has taken a dongle
+9002 3 is compiling
+9012 4 is refactoring
+9022 Coder #5 compiled for the 15th time
+9022 5 is debugging
+9032 1 has taken a dongle
+9032 1 has taken a dongle
+9032 1 is compiling
+9042 2 is refactoring
+9202 Coder #3 compiled for the 16th time
+9202 3 is debugging
+9212 4 has taken a dongle
+9212 4 has taken a dongle
+9212 4 is compiling
+9222 5 is refactoring
+9232 Coder #1 compiled for the 16th time
+9232 1 is debugging
+9242 2 has taken a dongle
+9242 2 has taken a dongle
+9242 2 is compiling
+9402 3 is refactoring
+9412 Coder #4 compiled for the 16th time
+9412 4 is debugging
+9422 5 has taken a dongle
+9422 5 has taken a dongle
+9422 5 is compiling
+9432 1 is refactoring
+9442 Coder #2 compiled for the 16th time
+9442 2 is debugging
+9602 3 has taken a dongle
+9602 3 has taken a dongle
+9602 3 is compiling
+9612 4 is refactoring
+9622 Coder #5 compiled for the 16th time
+9622 5 is debugging
+9632 1 has taken a dongle
+9632 1 has taken a dongle
+9632 1 is compiling
+9642 2 is refactoring
+9802 Coder #3 compiled for the 17th time
+9802 3 is debugging
+9812 4 has taken a dongle
+9812 4 has taken a dongle
+9812 4 is compiling
+9822 5 is refactoring
+9832 Coder #1 compiled for the 17th time
+9832 1 is debugging
+9842 2 has taken a dongle
+9842 2 has taken a dongle
+9842 2 is compiling
+10002 3 is refactoring
+10012 Coder #4 compiled for the 17th time
+10012 4 is debugging
+10022 5 has taken a dongle
+10022 5 has taken a dongle
+10022 5 is compiling
+10032 1 is refactoring
+10042 Coder #2 compiled for the 17th time
+10042 2 is debugging
+10202 3 has taken a dongle
+10202 3 has taken a dongle
+10202 3 is compiling
+10212 4 is refactoring
+10222 Coder #5 compiled for the 17th time
+10222 5 is debugging
+10232 1 has taken a dongle
+10232 1 has taken a dongle
+10232 1 is compiling
+10242 2 is refactoring
+10402 Coder #3 compiled for the 18th time
+10402 3 is debugging
+10412 4 has taken a dongle
+10412 4 has taken a dongle
+10412 4 is compiling
+10422 5 is refactoring
+10432 Coder #1 compiled for the 18th time
+10432 1 is debugging
+10442 2 has taken a dongle
+10442 2 has taken a dongle
+10442 2 is compiling
+10602 3 is refactoring
+10612 Coder #4 compiled for the 18th time
+10612 4 is debugging
+10622 5 has taken a dongle
+10622 5 has taken a dongle
+10622 5 is compiling
+10632 1 is refactoring
+10642 Coder #2 compiled for the 18th time
+10642 2 is debugging
+10802 3 has taken a dongle
+10802 3 has taken a dongle
+10802 3 is compiling
+10812 4 is refactoring
+10822 Coder #5 compiled for the 18th time
+10822 5 is debugging
+10832 1 has taken a dongle
+10832 1 has taken a dongle
+10832 1 is compiling
+10842 2 is refactoring
+11002 Coder #3 compiled for the 19th time
+11002 3 is debugging
+11012 4 has taken a dongle
+11012 4 has taken a dongle
+11012 4 is compiling
+11022 5 is refactoring
+11032 Coder #1 compiled for the 19th time
+11032 1 is debugging
+11042 2 has taken a dongle
+11042 2 has taken a dongle
+11042 2 is compiling
+11202 3 is refactoring
+11212 Coder #4 compiled for the 19th time
+11212 4 is debugging
+11222 5 has taken a dongle
+11222 5 has taken a dongle
+11222 5 is compiling
+11232 1 is refactoring
+11242 Coder #2 compiled for the 19th time
+11242 2 is debugging
+11402 3 has taken a dongle
+11402 3 has taken a dongle
+11402 3 is compiling
+11412 4 is refactoring
+11422 Coder #5 compiled for the 19th time
+11422 5 is debugging
+11432 1 has taken a dongle
+11432 1 has taken a dongle
+11432 1 is compiling
+11442 2 is refactoring
+11602 3 Coder has done the job!
+11612 4 has taken a dongle
+11612 4 has taken a dongle
+11612 4 is compiling
+11622 5 is refactoring
+11632 1 Coder has done the job!
+11642 2 has taken a dongle
+11642 2 has taken a dongle
+11642 2 is compiling
+11812 4 Coder has done the job!
+11822 5 has taken a dongle
+11822 5 has taken a dongle
+11822 5 is compiling
+11842 2 Coder has done the job!
+12022 5 Coder has done the job!
+
+All coders have done their work !
+
+Exiting program...

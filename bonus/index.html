@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codexion - Visualiseur de Logs Pro</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --panel-bg: #2d2d2d;
+            --text-main: #ecf0f1;
+            --text-muted: #95a5a6;
+            --color-idle: #7f8c8d;
+            --color-compiling: #2ecc71;
+            --color-debugging: #3498db;
+            --color-refactoring: #f1c40f;
+            --color-dead: #e74c3c;
+            --color-done: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            grid-template-rows: auto 200px;
+            gap: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .panel {
+            background-color: var(--panel-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        #visual-area {
+            grid-column: 1;
+            grid-row: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #coders-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* NOUVEAU : Le conteneur qui regroupe le cercle et le texte */
+        .coder-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* L'animation de position s'applique ici */
+            transition: transform 0.3s ease;
+        }
+
+        .coder-node {
+            width: 70px;
+            height: 70px;
+            background-color: var(--color-idle);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            font-weight: bold;
+            color: #111;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: inset 0 0 0 4px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        /* NOUVEAU : L'étiquette de texte sous le codeur */
+        .coder-label {
+            margin-top: 10px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            font-size: 13px;
+            font-weight: bold;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            transition: color 0.3s;
+        }
+
+        /* Effets visuels */
+        .coder-node.compiling { background-color: var(--color-compiling); box-shadow: 0 0 20px var(--color-compiling), inset 0 0 0 4px rgba(0,0,0,0.2); }
+        .coder-node.debugging { background-color: var(--color-debugging); box-shadow: 0 0 20px var(--color-debugging), inset 0 0 0 4px rgba(0,0,0,0.2); }
+        .coder-node.refactoring { background-color: var(--color-refactoring); box-shadow: 0 0 20px var(--color-refactoring), inset 0 0 0 4px rgba(0,0,0,0.2); }
+        .coder-node.dead { background-color: var(--color-dead); box-shadow: 0 0 30px var(--color-dead), inset 0 0 0 4px rgba(0,0,0,0.2); animation: pulse 1s infinite; }
+        .coder-node.done { background-color: var(--color-done); box-shadow: 0 0 15px var(--color-done), inset 0 0 0 4px rgba(0,0,0,0.2); }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+        /* Panneaux */
+        #side-panel { grid-column: 2; grid-row: 1; }
+        h2 { margin-top: 0; font-size: 18px; border-bottom: 2px solid #444; padding-bottom: 10px; }
+        .stat-line { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 16px; }
+        .stat-value { font-weight: bold; color: var(--color-debugging); font-family: monospace; font-size: 18px;}
+        .legend-item { display: flex; align-items: center; margin-bottom: 12px; font-size: 15px; color: var(--text-muted); }
+        .legend-color { width: 16px; height: 16px; border-radius: 50%; margin-right: 12px; }
+
+        /* Contrôles */
+        #bottom-panel { grid-column: 1 / span 2; grid-row: 2; display: flex; flex-direction: column; gap: 15px;}
+        .controls { display: flex; align-items: center; gap: 15px; }
+        button, select { background-color: #444; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 16px; cursor: pointer; transition: 0.2s; }
+        button:hover, select:hover { background-color: #555; }
+        button.primary { background-color: var(--color-debugging); font-weight: bold; }
+        button.primary:hover { background-color: #2980b9; }
+
+        input[type="range"] { flex-grow: 1; height: 8px; border-radius: 4px; appearance: none; background: #444; cursor: pointer; }
+        input[type="range"]::-webkit-slider-thumb { appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--color-debugging); }
+
+        #console { background-color: #111; color: var(--text-muted); font-family: monospace; font-size: 14px; padding: 10px; border-radius: 6px; flex-grow: 1; overflow-y: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
+        .log-line { margin: 2px 0; }
+        .log-line.highlight { color: var(--color-compiling); }
+    </style>
+</head>
+<body>
+
+    <div class="panel" id="visual-area">
+        <h2 style="position: absolute; top: 20px; left: 20px; border:none; z-index: 20;">Topologie Réseau</h2>
+        <div id="coders-container"></div>
+    </div>
+
+    <div class="panel" id="side-panel">
+        <h2>Statistiques Temps Réel</h2>
+        <div class="stat-line"><span>Temps:</span> <span class="stat-value" id="stat-time">0 ms</span></div>
+        <div class="stat-line"><span>Codeurs Actifs:</span> <span class="stat-value" id="stat-active">0</span></div>
+        <div class="stat-line"><span>Compilations:</span> <span class="stat-value" id="stat-compiles">0</span></div>
+        <div class="stat-line"><span>Burnouts:</span> <span class="stat-value" style="color:var(--color-dead)" id="stat-burnouts">0</span></div>
+
+        <h2 style="margin-top: 30px;">Légende</h2>
+        <div id="legend-container"></div>
+    </div>
+
+    <div class="panel" id="bottom-panel">
+        <div class="controls">
+            <button id="btn-play" class="primary">Lecture</button>
+            <select id="select-speed">
+                <option value="0.5">Vitesse : 0.5x</option>
+                <option value="1" selected>Vitesse : 1.0x</option>
+                <option value="2">Vitesse : 2.0x</option>
+                <option value="5">Vitesse : 5.0x</option>
+                <option value="10">Vitesse : 10.0x</option>
+            </select>
+            <span id="time-display" style="font-family: monospace; width: 80px; text-align: right;">0 ms</span>
+            <input type="range" id="timeline" min="0" max="100" value="0" step="1">
+        </div>
+        <div id="console"></div>
+    </div>
+
+    <script>
+        let logs = [];
+        let uniqueIds = [];
+        let numCoders = 0;
+        let maxTime = 0;
+        let virtualTime = 0;
+        let isPlaying = false;
+        let playbackSpeed = 1.0;
+        let lastTimestamp = 0;
+        let requestAnimId = null;
+
+        const colorsMap = {
+            "idle": "var(--color-idle)", "compiling": "var(--color-compiling)", 
+            "debugging": "var(--color-debugging)", "refactoring": "var(--color-refactoring)",
+            "dead": "var(--color-dead)", "done": "var(--color-done)"
+        };
+
+        // NOUVEAU : Configuration des textes et emojis pour chaque état
+        const stateConfig = {
+            "idle": { text: "En attente", icon: "⏳" },
+            "compiling": { text: "Compilation", icon: "⚙️" },
+            "debugging": { text: "Débogage", icon: "🐛" },
+            "refactoring": { text: "Refactoring", icon: "♻️" },
+            "dead": { text: "Burnout", icon: "💀" },
+            "done": { text: "Terminé", icon: "✅" }
+        };
+
+        const legendContainer = document.getElementById('legend-container');
+        for (const [state, config] of Object.entries(stateConfig)) {
+            legendContainer.innerHTML += `
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: ${colorsMap[state]}"></div>
+                    <span>${config.icon} ${config.text}</span>
+                </div>
+            `;
+        }
+
+        async function loadLogs() {
+            try {
+                const response = await fetch('simulation_logs.txt');
+                const text = await response.text();
+                parseLogs(text);
+                setupCoders();
+                updateUI(0); 
+            } catch (error) {
+                document.getElementById('console').innerHTML = `<div class="log-line" style="color: red;">ERREUR: Impossible de charger simulation_logs.txt. Assurez-vous d'utiliser un serveur local.</div>`;
+            }
+        }
+
+        function parseLogs(text) {
+            const lines = text.split('\n');
+            const regex = /^(\d+)\s+(\d+)\s+(.+)$/;
+            const idSet = new Set(); 
+            
+            for (let line of lines) {
+                const match = line.match(regex);
+                if (match) {
+                    const time = parseInt(match[1]);
+                    const id = parseInt(match[2]);
+                    const action = match[3];
+                    
+                    logs.push({ time, id, action, raw: line });
+                    idSet.add(id); 
+                    if (time > maxTime) maxTime = time;
+                }
+            }
+            
+            uniqueIds = Array.from(idSet).sort((a, b) => a - b);
+            numCoders = uniqueIds.length; 
+            document.getElementById('timeline').max = maxTime;
+        }
+
+        function setupCoders() {
+            const container = document.getElementById('coders-container');
+            const radius = 160; // Légèrement réduit pour faire de la place aux étiquettes
+            
+            uniqueIds.forEach((coderId, i) => {
+                const angle = (i / numCoders) * 2 * Math.PI - (Math.PI / 2);
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                
+                // Le wrapper qui contient le tout
+                const wrapper = document.createElement('div');
+                wrapper.className = 'coder-wrapper';
+                // Calcul précis pour centrer le wrapper au milieu, puis le translater
+                wrapper.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+                
+                // Le cercle du codeur
+                const node = document.createElement('div');
+                node.className = 'coder-node idle';
+                node.id = `coder-${coderId}`;
+                node.innerText = i + 1; 
+                
+                // L'étiquette de texte
+                const label = document.createElement('div');
+                label.className = 'coder-label';
+                label.id = `label-${coderId}`;
+                label.innerHTML = `<span>⏳</span> En attente`;
+
+                wrapper.appendChild(node);
+                wrapper.appendChild(label);
+                container.appendChild(wrapper);
+            });
+        }
+
+        function updateUI(targetTime) {
+            let states = {};
+            uniqueIds.forEach(id => states[id] = 'idle');
+            
+            let stats = { compiles: 0, burnouts: 0, done: 0 };
+            let recentLogs = [];
+
+            for (let log of logs) {
+                if (log.time > targetTime) break;
+                
+                recentLogs.push(log.raw);
+                if (recentLogs.length > 5) recentLogs.shift(); 
+
+                const action = log.action;
+                const id = log.id;
+
+                if (action.includes("is compiling")) states[id] = "compiling";
+                else if (action.includes("is debugging")) states[id] = "debugging";
+                else if (action.includes("is refactoring")) states[id] = "refactoring";
+                else if (action.includes("burned out")) { states[id] = "dead"; stats.burnouts++; }
+                else if (action.includes("done the job")) { states[id] = "done"; stats.done++; }
+
+                if (action.includes("compiled for the")) stats.compiles++;
+            }
+
+            // Mettre à jour les cercles HTML et leurs étiquettes
+            uniqueIds.forEach(id => {
+                const node = document.getElementById(`coder-${id}`);
+                const label = document.getElementById(`label-${id}`);
+                if (node && label) {
+                    const state = states[id];
+                    node.className = `coder-node ${state}`;
+                    
+                    // NOUVEAU : Mise à jour du texte, de l'émoji et de la couleur de l'étiquette
+                    const config = stateConfig[state];
+                    label.innerHTML = `<span>${config.icon}</span> ${config.text}`;
+                    label.style.color = colorsMap[state]; // Le texte prend la couleur de l'état !
+                }
+            });
+
+            document.getElementById('stat-time').innerText = `${Math.floor(targetTime)} / ${maxTime} ms`;
+            document.getElementById('stat-compiles').innerText = stats.compiles;
+            document.getElementById('stat-burnouts').innerText = stats.burnouts;
+            document.getElementById('stat-active').innerText = numCoders - stats.burnouts - stats.done;
+
+            document.getElementById('timeline').value = targetTime;
+            document.getElementById('time-display').innerText = `${Math.floor(targetTime)}ms`;
+
+            const consoleDiv = document.getElementById('console');
+            consoleDiv.innerHTML = recentLogs.map(l => 
+                `<div class="log-line ${l.includes("compiled") ? 'highlight' : ''}">> ${l}</div>`
+            ).join('');
+        }
+
+        function animate(timestamp) {
+            if (!lastTimestamp) lastTimestamp = timestamp;
+            const deltaMs = timestamp - lastTimestamp;
+            lastTimestamp = timestamp;
+
+            if (isPlaying && virtualTime < maxTime) {
+                virtualTime += deltaMs * playbackSpeed;
+                if (virtualTime >= maxTime) {
+                    virtualTime = maxTime;
+                    togglePlay(false); 
+                }
+                updateUI(virtualTime);
+            }
+
+            requestAnimId = requestAnimationFrame(animate);
+        }
+
+        const btnPlay = document.getElementById('btn-play');
+        const timeline = document.getElementById('timeline');
+        const speedSelect = document.getElementById('select-speed');
+
+        function togglePlay(forceState = null) {
+            isPlaying = forceState !== null ? forceState : !isPlaying;
+            btnPlay.innerText = isPlaying ? "Pause" : "Lecture";
+            btnPlay.style.backgroundColor = isPlaying ? "#e67e22" : "var(--color-debugging)";
+            if (isPlaying) lastTimestamp = performance.now(); 
+        }
+
+        btnPlay.addEventListener('click', () => togglePlay());
+
+        speedSelect.addEventListener('change', (e) => {
+            playbackSpeed = parseFloat(e.target.value);
+        });
+
+        timeline.addEventListener('input', (e) => {
+            virtualTime = parseFloat(e.target.value);
+            updateUI(virtualTime);
+        });
+
+        loadLogs().then(() => {
+            requestAnimId = requestAnimationFrame(animate);
+        });
+
+    </script>
+</body>
+</html>
